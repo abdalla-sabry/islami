@@ -1,5 +1,12 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami/tap/Ahades.dart';
+import 'package:islami/tap/Moshaf.dart';
+import 'package:islami/tap/Radio.dart';
+import 'package:islami/tap/Sabha.dart';
 
 class Home extends StatefulWidget {
    Home({super.key});
@@ -12,7 +19,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   @override
-  int index = 1;
+  int index = 0;
   Widget build(BuildContext context) {
 
     return Container(
@@ -63,7 +70,16 @@ class _HomeState extends State<Home> {
               BottomNavigationBarItem(icon: Icon(Icons.settings),
                   label: '',backgroundColor: Color(0xFFB7935F)),
             ]),
+        body:taps[index] ,
       ),
+
     );
   }
+  List<Widget>taps=[
+    Qaran(),
+    Sabha(),
+    RAdio(),
+    Ahades()
+  ];
+
 }
